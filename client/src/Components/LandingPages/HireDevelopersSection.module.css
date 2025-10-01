@@ -1,0 +1,215 @@
+/* Main section styling */
+.hireSection {
+  background-color: #0d0d0d;
+  color: #fff;
+  padding: 80px 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.hireHeading {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+/* Main container for the tabbing interface */
+.tabsContainer {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Left side: Tab buttons */
+.tabList {
+  flex: 0 0 30%; /* Takes up 30% of the width */
+  display: flex;
+  flex-direction: column;
+}
+
+.tabButton {
+  background-color: #2a2a2a;
+  color: #a0a0a0;
+  border: none;
+  padding: 25px 30px;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+  margin-bottom: 2px; /* Small gap between buttons */
+}
+
+/* Style for the ACTIVE tab */
+.tabButton.active {
+  background-color: #f7b600; /* Yellow color */
+  color: #000;
+  /* This creates the arrow shape pointing to the right */
+  clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
+}
+
+/* Right side: Tab content area */
+.tabContent {
+  flex: 1; /* Takes up the remaining space */
+  background-color: #1c1c1c;
+  border-radius: 15px;
+  padding: 40px;
+  min-height: 400px; /* Ensures a consistent height */
+}
+
+/* Grid layout for technology icons */
+.techGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 30px;
+}
+
+/* Individual technology item */
+.techItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+  transition: transform 0.2s ease;
+}
+
+.techItem:hover {
+  transform: scale(1.05);
+}
+
+.techIconContainer {
+  background-color: #2a2a2a;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.techIcon {
+  width: 50px;
+  height: 50px;
+}
+
+.techName {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* --- Hiring Process Section Styles --- */
+.hiringProcessSection {
+  text-align: center;
+  padding-top: 80px; /* Adds space from the section above */
+  margin-top: 60px; /* Ensures separation from the tabs container */
+}
+
+.processHeading {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 60px;
+}
+
+.processHeading .highlight {
+  color: #f7b600; /* DianApps yellow */
+}
+
+.stepsGrid {
+  display: grid;
+  /* Creates 4 equal columns */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  text-align: left;
+}
+
+.stepCard {
+  padding: 0 20px;
+  /* Vertical line separator from the image */
+  border-left: 1px solid #444;
+}
+
+.stepTitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #f7b600;
+  margin-bottom: 20px;
+}
+
+.stepDescription {
+  font-size: 1rem;
+  color: #a0a0a0;
+  line-height: 1.6;
+}
+
+.buttonContainer {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.workButton {
+  background-color: transparent;
+  color: #f7b600;
+  border: 2px solid #f7b600;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.workButton:hover {
+  background-color: #f7b600;
+  color: #0d0d0d;
+}
+
+/* --- Responsive adjustments for the hiring process section --- */
+@media (max-width: 992px) {
+  .stepsGrid {
+    /* Switch to 2 columns on tablets */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tabsContainer {
+    flex-direction: column;
+  }
+  .tabList {
+    flex: 1;
+    width: 100%;
+  }
+  .tabContent {
+    width: 100%;
+  }
+  .techGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .processHeading {
+    font-size: 2rem;
+  }
+  .stepsGrid {
+    /* Stack to 1 column on mobile */
+    grid-template-columns: 1fr;
+  }
+  .stepCard {
+    border-left: none; /* Remove side border on mobile */
+    border-top: 1px solid #444; /* Add top border for separation */
+    padding: 20px 0;
+  }
+  .stepCard:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+}

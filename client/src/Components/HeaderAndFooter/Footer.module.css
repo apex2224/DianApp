@@ -1,0 +1,138 @@
+/* --- Styles for Footer Section --- */
+.footerContainer {
+  background-color: #1a1a1a;
+  color: #a0a0a0;
+  padding: 60px 40px 20px 40px;
+  font-family: Arial, sans-serif;
+}
+
+.footerMain {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+.footerColumn {
+  flex: 1;
+  min-width: 200px; /* Ensures columns don't get too squished */
+}
+
+.columnTitle {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.linkList,
+.locationList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.linkList li,
+.locationList li {
+  margin-bottom: 15px;
+}
+
+.linkList a {
+  color: #a0a0a0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.linkList a:hover {
+  color: #f7b600;
+}
+
+.locationList span {
+  margin-right: 10px;
+}
+
+.enquiryButton {
+  background-color: #f7b600;
+  color: #0d0d0d;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.enquiryButton:hover {
+  background-color: #fff;
+  transform: scale(1.05);
+}
+
+.socialIcons {
+  display: flex;
+  gap: 15px;
+}
+
+.socialIcon {
+  color: #fff;
+  background-color: #2a2a2a;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.socialIcon:hover {
+  background-color: #f7b600;
+  color: #0d0d0d;
+}
+
+/* Footer Bottom Bar */
+.footerBottom {
+  border-top: 1px solid #333;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  font-size: 0.9rem;
+}
+
+.legalLinks {
+  display: flex;
+  gap: 25px;
+}
+
+.legalLinks a {
+  color: #a0a0a0;
+  text-decoration: none;
+}
+
+.legalLinks a:hover {
+  color: #fff;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+  .footerMain {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .footerBottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}

@@ -1,0 +1,106 @@
+/* --- Styles for WhyHire Section --- */
+.whyHireContainer {
+  background-color: #0d0d0d;
+  color: #ffffff;
+  padding: 80px 20px;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+/* Dotted pattern in the top right corner */
+.whyHireContainer::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 100px;
+  height: 30px;
+  background-image: radial-gradient(
+    rgba(247, 182, 0, 0.5) 1.5px,
+    transparent 1.5px
+  );
+  background-size: 15px 15px;
+}
+
+.contentWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.mainHeading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: #a0a0a0;
+  line-height: 1.7;
+  max-width: 900px;
+  margin: 0 auto 60px auto;
+}
+
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.benefitCard {
+  background-color: #1a1a1a;
+  padding: 20px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  border: 1px solid #2a2a2a;
+}
+
+.cardTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.cardDescription {
+  font-size: 1rem;
+  color: #a0a0a0;
+  margin-top: 15px;
+  line-height: 1.6;
+}
+
+/* Styles for the active card */
+.activeCard {
+  background-color: #222;
+  min-height: 200px; /* Taller active card */
+}
+
+.activeCard .cardTitle {
+  color: #f7b600; /* Yellow highlight color */
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+  .benefitsGrid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .mainHeading {
+    font-size: 2rem;
+  }
+  .benefitsGrid {
+    grid-template-columns: 1fr; /* 1 column for mobile */
+  }
+  .activeCard {
+    min-height: auto; /* Auto height on mobile */
+    padding: 30px 20px;
+  }
+}

@@ -1,0 +1,127 @@
+/* --- Styles for SuccessStories Section --- */
+.successStoriesContainer {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 60px 0; /* Vertical padding, horizontal padding is on the gallery */
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px; /* Side padding for the header */
+  margin-bottom: 40px;
+}
+
+.mainHeading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.subHeading {
+  font-size: 1.2rem;
+  color: #f7b600; /* DianApps yellow */
+  margin-top: 5px;
+}
+
+.viewAllButton {
+  background-color: #ffffff;
+  color: #0d0d0d;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 25px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.viewAllButton:hover {
+  background-color: #f7b600;
+  transform: scale(1.05);
+}
+
+.storiesGallery {
+  display: flex;
+  overflow-x: auto; /* Enables horizontal scrolling */
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 0 40px; /* Side padding to see start/end of scroll */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  flex-wrap: wrap;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.storiesGallery::-webkit-scrollbar {
+  display: none;
+}
+
+.storyCard {
+  position: relative;
+  flex: 1 1 300px; /* Prevents cards from shrinking */
+  height: 400px;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.storyCard:hover {
+  transform: scale(1.03);
+}
+
+.storyImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.4s ease;
+}
+
+.storyOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0) 60%
+  );
+  display: flex;
+  align-items: flex-end;
+  padding: 25px;
+  box-sizing: border-box;
+}
+
+.storyTitle {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.storyCategory {
+  font-size: 1rem;
+  color: #ccc;
+  margin-top: 5px;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+  .storyCard {
+    flex-basis: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .storyCard {
+    flex-basis: 100%;
+  }
+}
