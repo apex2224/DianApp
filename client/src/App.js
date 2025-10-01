@@ -1,6 +1,6 @@
 import React from "react";
 
-import LandingPage from "./Components/LandingPages/LandingPage";
+import LandingPage from "./Components/HireDevelopersLandingPages/LandingPage";
 
 const App = () => {
   return (
