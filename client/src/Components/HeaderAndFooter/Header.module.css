@@ -1,103 +1,148 @@
 /* Header.module.css */
 
 .headerContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 3rem;
-  background-color: #000000;
-  color: #ffffff;
-  font-family: Arial, sans-serif;
-}
-
-.logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-}
-
-.logoD {
-  color: #fcd12a; /* Yellow color from the image */
-}
-
-.navList {
-  display: flex;
-  list-style: none;
-  gap: 2.5rem; /* Space between nav items */
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
   margin: 0;
   padding: 0;
 }
 
-.navList a {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 1rem;
+.headerToolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.headerLogo {
+  height: 30px;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.navLinkText {
+  color: #333;
   font-weight: 500;
+  margin: 0;
   transition: color 0.3s ease;
 }
 
-.navList a:hover {
-  color: #fcd12a;
+.navItem:hover .navLinkText {
+  color: #007bff;
 }
 
-.activeLink {
-  color: #fcd12a;
-  border-bottom: 2px solid #fcd12a;
-  padding-bottom: 6px; /* Space between text and underline */
+.navLinkIcon {
+  width: 16px;
+  height: 16px;
 }
 
-.contactButton {
-  background-color: #fcd12a;
-  color: #000000;
+.muiButtonContained {
+  background-color: #007bff;
+  color: #ffffff;
   border: none;
   padding: 0.8rem 1.8rem;
-  border-radius: 50px; /* Fully rounded corners */
+  border-radius: 50px;
   font-weight: bold;
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.contactButton:hover {
-  background-color: #eab60c; /* A slightly darker yellow for hover effect */
+.muiButtonContained:hover {
+  background-color: #0056b3;
 }
 
-.menuIcon {
+/* Keeping the MUI class names for structure, but not styling them directly */
+.muiBoxRoot {
+}
+.css0 {
+}
+.muiToolbarRoot {
+}
+.muiToolbarGutters {
+}
+.muiToolbarRegular {
+}
+.css33t6sa {
+}
+.css759u60 {
+}
+.css49q3a7 {
+}
+.cssTwghds {
+}
+.cssIuwy45 {
+}
+.muiTypographyRoot {
+}
+.muiTypographyBody1 {
+}
+.cssW33p7f {
+}
+.muiButtonBaseRoot {
+}
+.muiButtonRoot {
+}
+.muiButtonContainedPrimary {
+}
+.muiButtonSizeMedium {
+}
+.muiButtonContainedSizeMedium {
+}
+.muiButtonColorPrimary {
+}
+.css1fh74gt {
+}
+.muiTouchRippleRoot {
+}
+.cssW0pj6f {
+}
+
+.navItem {
+  position: relative;
+}
+
+.dropdownWrapper {
   display: none;
-  cursor: pointer;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-top: 10px;
+  z-index: 1001;
 }
 
-.menuIconBar {
-  width: 25px;
-  height: 3px;
-  background-color: #ffffff;
-  margin: 5px 0;
-}
-
-@media (max-width: 768px) {
-  .nav {
-    display: none;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background-color: #000000;
-    padding: 1rem 0;
-  }
-
-  .navOpen {
-    display: block;
-  }
-
-  .navList {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .contactButton {
-    display: none;
-  }
-
-  .menuIcon {
-    display: block;
-  }
+.navItem:hover .dropdownWrapper {
+  display: block;
 }

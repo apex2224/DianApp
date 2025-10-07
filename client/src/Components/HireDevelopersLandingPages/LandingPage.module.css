@@ -1,358 +1,164 @@
-/* Hero Section */
-.bbf {
-  position: relative;
-  width: 100%;
-  height: 100vh;
+/* MainLandingPage.module.css */
+
+.heroContainer {
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 90vh;
+  width: 100%;
+  padding: 4rem 2rem;
+  background-color: #f8f9fa; /* Left side background color */
+  position: relative;
   overflow: hidden;
 }
 
-.bbf img {
+/* This pseudo-element creates the large curved background shape */
+.heroContainer::before {
+  content: "";
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -25%;
+  right: -30%;
+  width: 80%;
+  height: 150%;
+  background: linear-gradient(
+    135deg,
+    #e0e6ff,
+    #f0f2ff
+  ); /* Gradient for the curve */
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.contentWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  position: relative; /* Ensure content is above the pseudo-element */
   z-index: 1;
 }
 
-.overlay {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 20px;
+.textContainer {
+  flex: 1;
+  max-width: 50%;
+  padding-right: 2rem;
 }
 
-.blurContainer {
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 5vw 5vw;
-  max-width: 900px;
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-}
-
-.blurContainer h1 {
-  font-size: 3rem;
-  margin-bottom: 24px;
-  color: #ffffff;
+.heading {
+  font-size: 3.2rem;
   font-weight: 700;
   line-height: 1.2;
+  color: #1e2a3b;
+  margin-bottom: 1.5rem;
 }
 
-.blurContainer p {
-  font-size: 1.15rem;
-  margin-bottom: 40px;
-  color: rgba(255, 255, 255, 0.95);
-  line-height: 1.8;
+.highlightText {
+  background: linear-gradient(90deg, #f9a826, #e65100);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent; /* Fallback */
 }
 
-.hireButton {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+.subheading {
+  font-size: 1.1rem;
+  color: #5a677d;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  max-width: 480px;
+}
+
+.ctaButton {
+  background-color: #3f51b5; /* A suitable blue */
   color: white;
   border: none;
-  padding: 16px 40px;
+  padding: 1rem 2.5rem;
   font-size: 1rem;
   font-weight: 600;
-  border-radius: 50px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  letter-spacing: 0.5px;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(63, 81, 181, 0.3);
 }
 
-.hireButton:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 25px rgba(102, 126, 234, 0.5);
+.ctaButton:hover {
+  background-color: #303f9f;
+  transform: translateY(-2px);
 }
 
-/* Hire Section */
-.hireSection {
-  padding: 100px 0;
-  background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
-}
-
-.hireHeading {
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin-bottom: 60px;
-  position: relative;
-}
-
-.hireHeading::after {
-  content: "";
-  position: absolute;
-  bottom: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 2px;
-}
-
-/* Tab Section */
-.sideTabHireTab {
-  padding-right: 40px;
-}
-
-.tabHire {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.imageContainer {
+  flex: 1;
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  max-width: 45%;
 }
 
-.tabHire li button {
+.heroImage {
   width: 100%;
-  text-align: left;
-  padding: 20px 30px;
-  background: #ffffff;
-  border: 2px solid #e2e8f0;
-  border-radius: 12px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #4a5568;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+  max-width: 400px;
+  height: auto;
+  /* Add a subtle floating animation */
+  animation: float 6s ease-in-out infinite;
 }
 
-.tabHire li button::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 4px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  transform: scaleY(0);
-  transition: transform 0.3s ease;
-}
-
-.tabHire li button:hover {
-  border-color: #667eea;
-  color: #667eea;
-  transform: translateX(8px);
-}
-
-.tabHire li button.active {
-  background: linear-gradient(
-    135deg,
-    rgba(102, 126, 234, 0.1) 0%,
-    rgba(118, 75, 162, 0.1) 100%
-  );
-  border-color: #667eea;
-  color: #667eea;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.15);
-}
-
-.tabHire li button.active::before {
-  transform: scaleY(1);
-}
-
-/* Tab Content */
-.tabContentArea {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 40px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  min-height: 500px;
-}
-
-.tabContentArea .tabcontent {
-  display: none;
-  animation: fadeIn 0.4s ease;
-}
-
-.tabContentArea .tabcontent.active {
-  display: block;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
+/* Keyframes for the floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
 
-/* Tech Icons Grid */
-.tabContentArea .tech-icon {
-  margin-bottom: 24px;
-  gap: 20px;
-}
-
-.tabContentArea .hire-side-img {
-  padding: 20px 10px;
-  transition: all 0.3s ease;
-  border-radius: 12px;
-}
-
-.tabContentArea .hire-side-img:hover {
-  background: #f7fafc;
-  transform: translateY(-8px);
-}
-
-.tabContentArea .hire-side-img a {
-  text-decoration: none;
-  display: block;
-}
-
-.tabContentArea .hire-side-img img {
-  width: 70px;
-  height: 70px;
-  object-fit: contain;
-  margin-bottom: 12px;
-  transition: transform 0.3s ease;
-}
-
-.tabContentArea .hire-side-img:hover img {
-  transform: scale(1.1);
-}
-
-.tabContentArea .tech-name {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #2d3748;
-  margin-top: 8px;
-}
-
-/* Responsive Design */
-@media (max-width: 1200px) {
-  .sideTabHireTab {
-    padding-right: 20px;
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+  .heading {
+    font-size: 2.8rem;
   }
-
-  .tabContentArea {
-    padding: 30px;
-  }
-}
-
-@media (max-width: 991px) {
-  .sideTabHireTab {
-    padding-right: 0;
-    margin-bottom: 30px;
-  }
-
-  .tabHire {
-    flex-direction: row;
-    overflow-x: auto;
-    padding-bottom: 10px;
-    flex-wrap: wrap;
-  }
-
-  .tabHire li button {
-    min-width: 200px;
-    white-space: nowrap;
-  }
-
-  .tabContentArea {
-    min-height: auto;
+  .imageContainer {
+    max-width: 40%;
   }
 }
 
 @media (max-width: 768px) {
-  .bbf {
-    height: auto;
-    min-height: 100vh;
-    padding: 100px 0 60px;
+  .heroContainer {
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+    min-height: auto;
   }
 
-  .blurContainer {
-    padding: 30px 20px;
-  }
-
-  .blurContainer h1 {
-    font-size: 2rem;
-  }
-
-  .blurContainer p {
-    font-size: 1rem;
-  }
-
-  .hireSection {
-    padding: 60px 0;
-  }
-
-  .hireHeading {
-    font-size: 2rem;
-    margin-bottom: 40px;
-  }
-
-  .tabContentArea {
-    padding: 20px;
-  }
-
-  .tabContentArea .hire-side-img img {
-    width: 50px;
-    height: 50px;
-  }
-
-  .tabContentArea .tech-name {
-    font-size: 0.85rem;
-  }
-
-  .tabHire li button {
-    padding: 15px 20px;
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .blurContainer {
-    padding: 20px 15px;
-    border-radius: 12px;
-  }
-
-  .blurContainer h1 {
-    font-size: 1.75rem;
-  }
-
-  .blurContainer p {
-    font-size: 0.95rem;
-    margin-bottom: 30px;
-  }
-
-  .hireButton {
-    padding: 14px 30px;
-    font-size: 0.9rem;
-  }
-
-  .hireHeading {
-    font-size: 1.75rem;
-  }
-
-  .tabContentArea .tech-icon {
-    flex-wrap: wrap;
-  }
-
-  .tabContentArea .hire-side-img {
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
-
-  .tabHire {
+  .contentWrapper {
     flex-direction: column;
+    text-align: center;
   }
 
-  .tabHire li button {
-    min-width: auto;
+  .textContainer {
+    max-width: 100%;
+    padding-right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .subheading {
+    max-width: 100%;
+  }
+
+  .imageContainer {
+    max-width: 70%;
+    margin-top: 3rem;
+  }
+
+  .heroContainer::before {
+    width: 150%;
+    height: 100%;
+    top: -20%;
+    right: -50%;
   }
 }

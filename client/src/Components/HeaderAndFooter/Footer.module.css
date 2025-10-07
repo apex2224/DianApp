@@ -54,6 +54,12 @@
   margin-right: 10px;
 }
 
+.locationDetails {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
 .enquiryButton {
   background-color: #f7b600;
   color: #0d0d0d;

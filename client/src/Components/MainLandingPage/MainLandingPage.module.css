@@ -1,0 +1,471 @@
+/* MainLandingPage.module.css */
+
+.heroContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  width: 100%;
+  padding: 4rem 2rem;
+  background-color: #f8f9fa; /* Left side background color */
+  position: relative;
+  overflow: hidden;
+}
+
+/* This pseudo-element creates the large curved background shape */
+.heroContainer::before {
+  content: "";
+  position: absolute;
+  top: -25%;
+  right: -30%;
+  width: 80%;
+  height: 150%;
+  background: linear-gradient(
+    135deg,
+    #e0e6ff,
+    #f0f2ff
+  ); /* Gradient for the curve */
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.contentWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  position: relative; /* Ensure content is above the pseudo-element */
+  z-index: 1;
+}
+
+.textContainer {
+  flex: 1;
+  max-width: 50%;
+  padding-right: 2rem;
+}
+
+.heading {
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1e2a3b;
+  margin-bottom: 1.5rem;
+}
+
+.highlightText {
+  background: linear-gradient(90deg, #f9a826, #e65100);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent; /* Fallback */
+}
+
+.subheading {
+  font-size: 1.1rem;
+  color: #5a677d;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  max-width: 480px;
+}
+
+.ctaButton {
+  background-color: #3f51b5; /* A suitable blue */
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(63, 81, 181, 0.3);
+}
+
+.ctaButton:hover {
+  background-color: #303f9f;
+  transform: translateY(-2px);
+}
+
+.imageContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 45%;
+}
+
+.heroImage {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  /* Add a subtle floating animation */
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Keyframes for the floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+  .heading {
+    font-size: 2.8rem;
+  }
+  .imageContainer {
+    max-width: 40%;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroContainer {
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+    min-height: auto;
+  }
+
+  .contentWrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .textContainer {
+    max-width: 100%;
+    padding-right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .subheading {
+    max-width: 100%;
+  }
+
+  .imageContainer {
+    max-width: 70%;
+    margin-top: 3rem;
+  }
+
+  .heroContainer::before {
+    width: 150%;
+    height: 100%;
+    top: -20%;
+    right: -50%;
+  }
+}
+
+/* --- Logo Slider --- */
+.logoSliderContainer {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #ffffff;
+  position: relative;
+  z-index: 2;
+  margin: -5rem auto 0;
+  width: 90%;
+  max-width: 1200px;
+  border-radius: 25px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.sliderTitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #1e2a3b;
+  margin-bottom: 3rem;
+}
+
+.sliderTitle .highlight {
+  color: #3f51b5;
+}
+
+.logoSlider {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 20%,
+    black 80%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 20%,
+    black 80%,
+    transparent
+  );
+}
+
+.logoTrack {
+  display: flex;
+  width: calc(250px * 14); /* 7 logos * 2, 250px per logo container */
+  animation: scroll 40s linear infinite;
+}
+
+.logo {
+  width: 250px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+}
+
+.logo img {
+  max-width: 150px;
+  max-height: 60px;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.logo:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(
+      calc(-250px * 7)
+    ); /* scroll by the width of the original 7 logos */
+  }
+}
+
+/* --- Growth Story Section --- */
+.growthStorySection {
+  padding: 6rem 2rem;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.growthStoryHeader {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+.growthTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e2a3b;
+  margin-bottom: 1rem;
+}
+
+.growthTitle .highlight {
+  color: #3f51b5;
+}
+
+.growthDescription {
+  font-size: 1.1rem;
+  color: #5a677d;
+  line-height: 1.6;
+}
+
+.dividerImg {
+  margin: 2rem auto;
+  display: block;
+  width: 100%;
+  max-width: 800px;
+}
+
+.statsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    align-items: center;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.leftSection, .rightSection {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    flex: 1;
+}
+
+.centerSection {
+    flex: 1.5;
+}
+
+.statCard {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.statValue {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #3f51b5;
+  margin: 0;
+}
+
+.statLabel {
+  font-size: 1rem;
+  color: #5a677d;
+  margin-top: 0.5rem;
+}
+
+.cardBg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  opacity: 0.05;
+  z-index: 0;
+}
+
+.statContent {
+  position: relative;
+  z-index: 1;
+}
+
+.centerCard {
+    padding: 3rem 2rem;
+    min-height: 400px;
+}
+
+.bottomCardContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.bottomCard {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* --- AI Solutions Section --- */
+@keyframes float-diag {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-10px, -10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.aiSolutionsSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.aiSolutionsLeft {
+  flex: 1;
+  max-width: 50%;
+  z-index: 1;
+}
+
+.aiSolutionsTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e2a3b;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+
+.aiSolutionsTitle .highlight {
+  color: #3f51b5;
+}
+
+.aiSolutionsDescription {
+  font-size: 1.1rem;
+  color: #5a677d;
+  line-height: 1.8;
+}
+
+.aiSolutionsRight {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.aiSolutionsRight::before {
+  content: '';
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  background: linear-gradient(135deg, #e0e6ff, #f0f2ff);
+  border-radius: 50%;
+  z-index: 0;
+  filter: blur(20px);
+}
+
+.aiSolutionsImage {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 1;
+  animation: float-diag 5s ease-in-out infinite;
+}
+
+@media (max-width: 992px) {
+  .aiSolutionsImage {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .aiSolutionsSection {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .aiSolutionsLeft {
+    max-width: 100%;
+  }
+
+  .aiSolutionsRight {
+    margin-top: 3rem;
+  }
+
+  .aiSolutionsRight::before {
+    width: 100%;
+    height: 100%;
+  }
+}
