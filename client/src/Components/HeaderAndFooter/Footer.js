@@ -1,7 +1,7 @@
 import React from "react";
-import About from "./FooterLinks/About";
 import styles from "./Footer.module.css";
 import { FaLinkedin, FaYoutube, FaWhatsapp, FaInstagram } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 // Data for footer links - makes it easy to update
 const quickLinks = [
@@ -15,7 +15,7 @@ const quickLinks = [
 ];
 
 const servicesLinks = [
-  { name: "AI / ML", href: "/services/ai-ml" },
+  { name: "AI / ML", href: "/AI/ML" },
   { name: "Mobile App Development", href: "/services/mobile-app" },
   { name: "UI/UX Design", href: "/services/ui-ux" },
   { name: "Web Development", href: "/services/web-development" },
@@ -72,7 +72,7 @@ const Footer = () => {
           <ul className={styles.linkList}>
             {quickLinks.map((link) => (
               <li key={link.name}>
-                <a href={link.href}>{link.name}</a>
+                <Link to={link.href}>{link.name}</Link>
               </li>
             ))}
           </ul>
@@ -84,7 +84,7 @@ const Footer = () => {
           <ul className={styles.linkList}>
             {servicesLinks.map((link) => (
               <li key={link.name}>
-                <a href={link.href}>{link.name}</a>
+                <Link to={link.href}>{link.name}</Link>
               </li>
             ))}
           </ul>
@@ -95,7 +95,7 @@ const Footer = () => {
           <ul className={styles.linkList}>
             {IndustrialTrainings.map((link) => (
               <li key={link.name}>
-                <a href={link.href}>{link.name}</a>
+                <Link to={link.href}>{link.name}</Link>
               </li>
             ))}
           </ul>
