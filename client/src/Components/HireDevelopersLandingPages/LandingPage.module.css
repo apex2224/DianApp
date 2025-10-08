@@ -117,19 +117,30 @@
 }
 
 /* --- Responsive Design --- */
+@media (max-width: 1200px) {
+  .heroContainer {
+    padding: 3rem 1.5rem;
+  }
+  .heading {
+    font-size: 3rem;
+  }
+}
+
 @media (max-width: 992px) {
   .heading {
-    font-size: 2.8rem;
+    font-size: 2.6rem;
   }
   .imageContainer {
-    max-width: 40%;
+    max-width: 45%;
+  }
+  .heroContainer {
+    padding: 3rem 1rem;
   }
 }
 
 @media (max-width: 768px) {
   .heroContainer {
-    padding-top: 6rem;
-    padding-bottom: 4rem;
+    padding: 4rem 1rem 3rem;
     min-height: auto;
   }
 
@@ -146,13 +157,18 @@
     align-items: center;
   }
 
+  .heading {
+    font-size: 2.2rem;
+  }
+
   .subheading {
     max-width: 100%;
+    font-size: 1rem;
   }
 
   .imageContainer {
-    max-width: 70%;
-    margin-top: 3rem;
+    max-width: 80%;
+    margin-top: 2rem;
   }
 
   .heroContainer::before {
@@ -160,5 +176,59 @@
     height: 100%;
     top: -20%;
     right: -50%;
+  }
+}
+
+@media (max-width: 600px) {
+  .heroContainer {
+    padding: 3rem 0.5rem 2rem;
+  }
+
+  .heading {
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+
+  .subheading {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+
+  .ctaButton {
+    padding: 0.8rem 2rem;
+    font-size: 0.9rem;
+  }
+
+  .imageContainer {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroContainer {
+    padding: 2rem 0.5rem 1.5rem;
+  }
+
+  .heading {
+    font-size: 1.6rem;
+  }
+
+  .subheading {
+    font-size: 0.9rem;
+  }
+
+  .ctaButton {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .heading {
+    font-size: 1.4rem;
+  }
+
+  .subheading {
+    font-size: 0.85rem;
   }
 }

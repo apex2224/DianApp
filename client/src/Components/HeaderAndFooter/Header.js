@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Header.module.css";
-import HireResourcesDropdown from "./HireResourcesDropdown";
-import CompanyDropdown from "./CompanyDropdown";
-import ServicesDropdown from "./ServicesDropdown";
+import HireResourcesDropdown from "./DropDown/HireResourcesDropdown";
+import CompanyDropdown from "./DropDown/CompanyDropdown";
+import ServicesDropdown from "./DropDown/ServicesDropdown";
+import { Link } from "react-router-dom";
 
 const Header = () => {
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
     <div className={styles.headerContainer}>
       <div className={styles.headerContent}>
@@ -15,11 +22,13 @@ const Header = () => {
             alt="dianapps"
           />
         </div>
-        <div className={styles.navLinks}>
+
+        {/* Desktop Navigation */}
+        <div className={styles.desktopNavLinks}>
           <div className={styles.navItem}>
-            <div className={styles.navLink}>
+            <Link to="/AI/ML" className={styles.navLink}>
               <p className={styles.navLinkText}>AI/ML</p>
-            </div>
+            </Link>
           </div>
           <div className={styles.navItem}>
             <div className={styles.navLink}>
@@ -81,8 +90,53 @@ const Header = () => {
             </div>
           </div>
         </div>
-        <button className={styles.muiButtonContained}>Contact Us</button>
+
+        <button className={`${styles.muiButtonContained} ${styles.desktopContactButton}`}>Contact Us</button>
+
+        {/* Hamburger Icon */}
+        <div className={styles.hamburger} onClick={toggleMobileMenu}>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
+
+      {/* Mobile Navigation Menu */}
+      {isMobileMenuOpen && (
+        <div className={styles.mobileNavLinks}>
+          <div className={styles.navItem}>
+            <Link to="/AI/ML" className={styles.navLink}>
+              <p className={styles.navLinkText}>AI/ML</p>
+            </Link>
+          </div>
+          <div className={styles.navItem}>
+            <div className={styles.navLink}>
+              <p className={styles.navLinkText}>Services</p>
+            </div>
+          </div>
+          <div className={styles.navItem}>
+            <div className={styles.navLink}>
+              <p className={styles.navLinkText}>Placements</p>
+            </div>
+          </div>
+          <div className={styles.navItem}>
+            <div className={styles.navLink}>
+              <p className={styles.navLinkText}>Portfolio</p>
+            </div>
+          </div>
+          <div className={styles.navItem}>
+            <div className={styles.navLink}>
+              <p className={styles.navLinkText}>Hire Resources</p>
+            </div>
+          </div>
+          <div className={styles.navItem}>
+            <div className={styles.navLink}>
+              <p className={styles.navLinkText}>Company</p>
+            </div>
+          </div>
+          <button className={styles.muiButtonContained}>Contact Us</button>
+        </div>
+      )}
     </div>
   );
 };

@@ -13,16 +13,6 @@
   padding: 0;
 }
 
-.headerToolbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  width: 100%;
-  box-sizing: border-box;
-}
-
 .headerContent {
   display: flex;
   justify-content: space-between;
@@ -38,7 +28,8 @@
   height: 30px;
 }
 
-.navLinks {
+/* Desktop Navigation */
+.desktopNavLinks {
   display: flex;
   align-items: center;
   gap: 2rem;
@@ -49,6 +40,7 @@
   align-items: center;
   gap: 0.5rem;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .navLinkText {
@@ -83,51 +75,7 @@
   background-color: #0056b3;
 }
 
-/* Keeping the MUI class names for structure, but not styling them directly */
-.muiBoxRoot {
-}
-.css0 {
-}
-.muiToolbarRoot {
-}
-.muiToolbarGutters {
-}
-.muiToolbarRegular {
-}
-.css33t6sa {
-}
-.css759u60 {
-}
-.css49q3a7 {
-}
-.cssTwghds {
-}
-.cssIuwy45 {
-}
-.muiTypographyRoot {
-}
-.muiTypographyBody1 {
-}
-.cssW33p7f {
-}
-.muiButtonBaseRoot {
-}
-.muiButtonRoot {
-}
-.muiButtonContainedPrimary {
-}
-.muiButtonSizeMedium {
-}
-.muiButtonContainedSizeMedium {
-}
-.muiButtonColorPrimary {
-}
-.css1fh74gt {
-}
-.muiTouchRippleRoot {
-}
-.cssW0pj6f {
-}
+
 
 .navItem {
   position: relative;
@@ -145,4 +93,71 @@
 
 .navItem:hover .dropdownWrapper {
   display: block;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  z-index: 1002;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+/* Mobile Navigation Menu */
+.mobileNavLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: white;
+  position: absolute;
+  top: 70px; /* Adjust this based on your header's height */
+  left: 0;
+  width: 100%;
+  padding: 2rem 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.mobileNavLinks .navItem {
+  width: 100%;
+  text-align: center;
+}
+
+.mobileNavLinks .navLink {
+  justify-content: center;
+  padding: 0.5rem 0;
+}
+
+/* --- Media Queries --- */
+@media (max-width: 900px) {
+  .desktopNavLinks,
+  .desktopContactButton {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .headerContent {
+    padding: 1rem 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .headerContent {
+    padding: 0.8rem 1rem;
+  }
+  
+  .headerLogo {
+    height: 25px;
+  }
 }
