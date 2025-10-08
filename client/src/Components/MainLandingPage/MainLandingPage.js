@@ -43,14 +43,17 @@ const MainLandingPage = () => {
         <div className={styles.contentWrapper}>
           <div className={styles.textContainer}>
             <h1 className={styles.heading}>
-              Transform Next-Gen IT Needs With <br />
-              <span className={styles.highlightText}>
-                AI-First Digital Partner
-              </span>
+              Welcome to Ziion Technology <br />
+              <span className={styles.highlightText}></span>
             </h1>
             <p className={styles.subheading}>
-              We are global IT disruptors leveraging AI-powered capabilities to
-              build an ecosystem that takes innovation a step ahead.
+              Six Weeks Industrial Training Program for Future IT Professionals
+            </p>
+            <p className={styles.description}>
+              {" "}
+              Gain hands-on experience with real-world IT projects, guided by
+              expert mentors. Enhance your skills in software development, web
+              technologies, and industry best practices.
             </p>
             <button className={styles.ctaButton}>Speak With Expert</button>
           </div>
